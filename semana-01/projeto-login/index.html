@@ -1,26 +1,108 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Sistema de Login</title>
-    <link ref="stylesheet" href="style.css">
-</head>
-<body>
-    <h1>Meu Sistema de Login</h1>
+    <style>
+  body {
+    font-family: sans-serif;
+    background-color: #f4f4f4;
+    text-align: center; /* Centraliza tudo */
+  }
+
+  table {
+    margin: 0 auto; /* Centraliza a tabela */
+    border-collapse: collapse; /* Tira os espaços duplos das bordas */
+    width: 90%; /* Ocupa 90% da tela do celular */
+    background: white;
+  }
+
+  th, td {
+    border: 1px solid #ddd; /* Borda cinza fina */
+    padding: 12px; /* Espaço interno pra não ficar espremido */
+    text-align: left;
+  }
+
+  th {
+    background-color: #007bff; /* Cabeçalho azul */
+    color: white;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f2f2f2; /* Linha "zebrada" (cinza sim, branco não) */
+  }
+    button {
+    background-color: #28a745; /* Verde sucesso */
+    color: white;
+    padding: 15px 32px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+
+  button:hover {
+    background-color: #218838; /* Verde mais escuro ao passar o mouse */
+  }
+</style>
+  </head>
+  <body>
+    <h1 id="nome-perfil">Gustavo Igor</h1>
+    <img src="foto.jpg" alt="foto de gustavo" width="150px">
+    <h2>Habilidades</h2>
+    <ul>
+      <li>HTML</li>
+      <li>Vontade de aprender</li>
+      <li>Entregas rapidas</li>
+    </ul>
+    <table>
+      <thead>
+        <tr>
+          <th>Empresa</th>
+          <th>Cargo</th>
+          <th>Ano</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+        <td>Entrega Rápida</td>
+        <td>Entregador</td>
+        <td>2024</td>
+        </tr>
+        <tr>
+          <td>Loboencell</td>
+          <td>Técnico</td>
+          <td>2025</td>
+        </tr>
+        <tr>
+          <td>Negoci No Topo GMB</td>
+          <td>Gestor</td>
+          <td>2025</td>
+        </tr>
+      </tbody>
+    </table>
+    <button onclick="mostrarContato()">ME CONTRATAR</button>
+<br><br> <!-- Só pra dar um espaço antes do link -->
+<button onclick="resetarTitulo()" style="background-color: red;">RESETAR</button>
+<br><br>
+    <a href="https://gustavoigorg.github.io/curso-fullstack/">Meu Git</a>
+    <script>
+  function mostrarContato() {
+    // 1. Procura o elemento pelo ID
+    var elementoTitulo =document.getElementById("nome-perfil");
     
-    <form>
-        <label>Email:</label>
-        <input type="email" placeholder="Digite seu email">
-        
-        <label>Senha:</label>
-        <input type="password" placeholder="Digite sua senha">
-        
-        <button type="submit">Entrar</button>
-    </form>
+    // 2. Muda o texto dele
+    elementoTitulo.innerText="Gustavo Igor - Contratado! ✅";
     
-    <footer>
-        <p>Desenvolvido por Gustavo - 2026"</p>
-    </footer>
-</body>
+    // 3. Muda a cor dele pra verde (bônus!)
+    elementoTitulo.style.color ="#28a745";
+}
+function resetarTitulo() {
+    var elementoTitulo = document.getElementById("nome-perfil");
+    elementoTitulo.innerText = "Gustavo Igor"; // Volta o texto original
+    elementoTitulo.style.color = "black"; // Volta a cor preta
+}
+</script>
+  </body>
 </html>
