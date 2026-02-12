@@ -45,9 +45,33 @@
   button:hover {
     background-color: #218838; /* Verde mais escuro ao passar o mouse */
   }
+      nav {
+    background-color: #333; /* Fundo escuro */
+    padding: 15px;
+    position: sticky; /* Cola no topo da tela */
+    top: 0;
+}
+
+nav a {
+    color: white; /* Texto branco */
+    text-decoration: none; /* Tira o sublinhado feio */
+    margin: 0 10px; /* Espaço entre os links */
+    font-weight: bold;
+    font-size: 18px;
+}
+
+nav a:hover {
+    color: #ffc107; /* Fica amarelo quando passa o dedo/mouse */
+}
 </style>
   </head>
   <body>
+    <nav>
+    <a href="curriculo.html">🏠 Home</a> |
+    <a href="calculadora.html">🧮 Calculadora</a> |
+    <a href="https://wa.me/5511999999999" target="_blank">📞 Contato</a>
+</nav>
+<hr>
     <h1 id="nome-perfil">Gustavo Igor</h1>
     <img src="curso-fullstack/semana-01/projeto-login/foto.jpg" alt="foto de gustavo" width="150px">
     <h2>Habilidades</h2>
