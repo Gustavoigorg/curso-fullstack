@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Serviço</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; padding: 20px; }
+        input { padding: 10px; margin: 5px; width: 80%; border: 1px solid #ccc; border-radius: 5px;}
+        button { padding: 10px 20px; background: #007bff; color: white; border: none; border-radius: 5px; margin-top: 10px; cursor: pointer;}
+        h3 { color: #28a745; margin-top: 20px; font-size: 24px; }
+        nav {
+    background-color: #333; /* Fundo escuro */
+    padding: 15px;
+    position: sticky; /* Cola no topo da tela */
+    top: 0;
+}
+
+nav a {
+    color: white; /* Texto branco */
+    text-decoration: none; /* Tira o sublinhado feio */
+    margin: 0 10px; /* Espaço entre os links */
+    font-weight: bold;
+    font-size: 18px;
+}
+
+nav a:hover {
+    color: #ffc107; /* Fica amarelo quando passa o dedo/mouse */
+}
+    </style>
+</head>
+<body>
+    <nav>
+    <a href="https://gustavoigorg.github.io/curso-fullstack/semana-01/projeto-login/index.html">🏠 Home</a> |
+    <a href="https://gustavoigorg.github.io/curso-fullstack/semana-01/calculadora.html">🧮 Calculadora</a> |
+    <a href="https://wa.me/5511999999999" target="_blank">📞 Contato</a>
+</nav>
+<hr> <!-- Linha horizontal para separar -->
+
+    <h1>Quanto custa o serviço?</h1>
+
+    <!-- PRESTE ATENÇÃO NOS IDs ABAIXO -->
+    <input type="number" id="horas-trabalhadas" placeholder="Quantas horas?">
+    <br>
+    <input type="number" id="preco-por-hora" placeholder="Preço por hora (R$)">
+    <br>
+    
+    <button onclick="calcular()">CALCULAR TOTAL</button>
+
+    <!-- Onde o resultado vai aparecer -->
+    <h3 id="resultado-final">Total: R$ 0,00</h3>
+
+    <script>
+      function calcular() {
+    // 1. Pegar o valor das horas (Qual é o ID do input de horas?)
+    var horas = document.getElementById("horas-trabalhadas").value;
+
+    // 2. Pegar o preço por hora (Qual é o ID do input de preço?)
+    var preco = document.getElementById("preco-por-hora").value;
+    
+    // Se horas for vazio OU preço for vazio
+if (horas == "" || preco == "") {
+    alert("Por favor, preencha todos os campos!");
+    return; // O "return" mata a função aqui. Ele para tudo.
+}
+
+    // 3. Calcular o total (multiplique a variável horas pela variável preco)
+    var total = horas * preco;
+    
+    // ... (cálculo do total aqui em cima)
+
+// Se o total for maior que 1000
+if (total > 1000) {
+    // Aplica desconto de 10% (multiplica por 0.9)
+    total = total * 0.9;
+    
+    // Mostra um alerta avisando do desconto
+    alert("Parabéns! Você ganhou 10% de desconto!");
+}
+
+// ... (mostrar resultado na tela aqui embaixo)
+
+    // 4. Mostrar o resultado na tela (Qual o ID do h3 onde vai o resultado?)
+    document.getElementById("resultado-final").innerText = "Total: R$ " + total;
+}
+        // O CÓDIGO VAI AQUI (PASSO 2)
+    </script>
+
+</body>
+</html>
+
